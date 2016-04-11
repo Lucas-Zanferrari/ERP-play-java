@@ -1,0 +1,27 @@
+@(message: String)
+<html>
+    @header()
+
+                @if(message!="") {
+                    <div class="alert alert-danger" role="alert">
+                        @message
+                    </div>
+                }
+                <form method="post" action="@routes.Application.authenticate()">
+                    <div class="form-group">
+                        <label for="user">Usuário</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Usuário">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Lembre de mim
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Login</button>
+                </form>
+    @footer()
+</html>

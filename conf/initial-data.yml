@@ -1,0 +1,6 @@
+
+- !!models.Funcionario
+    nome:   Gerente
+    usuario: gerente
+    senha: gerente
+    nivel_acesso: manager

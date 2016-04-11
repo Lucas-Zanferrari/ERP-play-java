@@ -1,0 +1,59 @@
+@(myForm: play.data.Form[Produto],message:String)
+
+<html>
+    @header()
+    @menu()
+
+    @if(message!="") {
+        <div class="alert alert-success" role="alert">
+        @message
+        </div>
+    }
+    @if(myForm.hasGlobalErrors()) {
+        <ul>
+        @for(error <- myForm.globalErrors) {
+            <li>@error.message</li>
+        }
+        </ul>
+    }
+<form method="post" action="@routes.ProdutoController.create()">
+    <div class="form-group">
+        <label for="user">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do Produto">
+    </div>
+    @if(myForm.error("nome")!=null) {
+        <div class="alert alert-danger" role="alert">
+            Campo Obrigatório
+        </div>
+    }
+    <div class="form-group">
+        <label for="descricao">Descriçao</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descricao do Produto">
+    </div>
+    @if(myForm.error("descricao")!=null) {
+        <div class="alert alert-danger" role="alert">
+            Campo Obrigatório
+        </div>
+    }
+    <div class="form-group">
+        <label for="qtd_estoque">Quantidade em Estoque</label>
+        <input type="number" class="form-control" id="qtd_estoque" name="qtd_estoque" placeholder="Quantidade em Estoque">
+    </div>
+    @if(myForm.error("qtd_estoque")!=null) {
+        <div class="alert alert-danger" role="alert">
+            Campo Obrigatório
+        </div>
+    }
+    <div class="form-group">
+        <label for="preco">Preço</label>
+        <input type="number" step="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do Produto">
+    </div>
+    @if(myForm.error("preco")!=null) {
+        <div class="alert alert-danger" role="alert">
+            Campo Obrigatório
+        </div>
+    }
+    <button type="submit" class="btn btn-default">Cadastrar</button>
+</form>
+    @footer()
+</html>

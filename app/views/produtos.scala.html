@@ -1,0 +1,20 @@
+@(produtos: java.util.List[Produto],message:String)
+<table class="table table-condensed">
+    <tr>
+        <td>Nome</td>
+        <td>Descricao</td>
+        <td>Preço</td>
+        <td>Estoque</td>
+    </tr>
+    @if(produtos.isEmpty){
+        <tr class="danger"><td>Não há produtos cadastrados</td></tr>
+    }else{
+    @for(produto <- produtos) {
+        <tr class="active">
+            <td>@produto.getNome()</td>
+            <td>@produto.getDescricao()</td>
+            <td>@produto.getPreco()</td>
+            <td>@produto.getQtd_estoque()</td>
+        </tr>
+    }}
+</table>
