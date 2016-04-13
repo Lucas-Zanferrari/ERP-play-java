@@ -14,7 +14,7 @@ import views.html.funcionario;
 public class FuncionarioController extends Controller {
 
     public static Result index() {
-        if(session().get("nome")==null){
+        if(session().isEmpty()){
             return redirect(
                     routes.Application.login()
             );

@@ -1,27 +1,36 @@
-@(message: String)
-<html>
-    @header()
+@(message: String, loginForm: Form[Login])
 
-                @if(message!="") {
-                    <div class="alert alert-danger" role="alert">
-                        @message
-                    </div>
-                }
-                <form method="post" action="@routes.Application.authenticate()">
-                    <div class="form-group">
-                        <label for="user">Usuário</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Usuário">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Lembre de mim
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-default">Login</button>
+    @header()
+            </div>
+            <div class="col-sm-8 text-left">
+                <br />
+                <h1>Bem vindo(a)!</h1>
+                <h4>Preencha o formulário de login e clique em Enviar para começar</h4>
+                <hr>
+                <form class="form-signin" method="post" action="@routes.Application.authenticate()">
+                    <h3 class="form-signin-heading">Formulário de login</h3>
+                    <label for="inputUsername" class="sr-only">Endereço de email</label>
+                    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Usuário" required autofocus>
+                    <label for="inputPassword" class="sr-only">Senha</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                    @if(message!=null) {
+                        <br />
+                        <div class="alert alert-danger text-center" role="alert">
+                            @message
+                        </div>
+                    }
                 </form>
-    @footer()
-</html>
+
+                <br />
+
+                <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                <script src="_js/ie10-viewport-bug-workaround.js"></script>
+            </div>
+
+            <div class="col-sm-2 sidenav">
+            </div>
+        </div>
+    </div>
+@footer()
+

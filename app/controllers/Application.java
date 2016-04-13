@@ -23,8 +23,13 @@ public class Application extends Controller {
 
     public static Result login() {
         Form<Login> loginForm = form(Login.class);
+        if(!session().isEmpty()){
+            return redirect(
+                    routes.Application.index()
+            );
+        }
         return ok(
-                login.render("")
+                login.render(null, null)
         );
     }
 
@@ -33,7 +38,7 @@ public class Application extends Controller {
         Login loginObj = new Login(dynamicForm.get("username"),dynamicForm.get("password"));
         Funcionario funcionarioObj = loginObj.validate();
         if (funcionarioObj==null) {
-            return badRequest(login.render("Usuário ou senha inválido"));
+            return badRequest(login.render("Usuário ou senha inválido", null));
         } else {
             session().clear();
             session("nome", funcionarioObj.getNome());
@@ -49,22 +54,6 @@ public class Application extends Controller {
         return redirect(
             routes.Application.login()
         );
-    }
-
-}
-
-class Login {
-
-    public String username;
-    public String password;
-
-    public Login(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public Funcionario validate() {
-        return Funcionario.authenticate(username, password);
     }
 }
 

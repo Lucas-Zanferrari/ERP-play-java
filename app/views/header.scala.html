@@ -1,16 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Login: Sistema de Automação Comercial</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-<head>
-    <title>Gerenciador de Padaria</title>
-        <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/ie10-viewport-bug-workaround.css")" />
+        <link rel="icon" href="@routes.Assets.at("images/favicon.ico")" />
+    </head>
 
-    <div class="page-header">
-        <h1>Gerenciador de Padaria <small></small></h1>
-    </div>
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img id="logo" src="@routes.Assets.at("images/bread-icon.png")" /></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        @if(session().isEmpty) {
+                            <li><a href="#">Sistema de Automação Comercial</a></li>
+                            <li><a href="#">Obter suporte</a></li>
+                        } else {
+                            @if(session.get("nivelAcesso")=="manager") {
+
+                            }
+                            @if(session.get("nivelAcesso")=="regular") {
+
+                            }
+                        }
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        @if(session().isEmpty) {
+                            <li class="active"><a href="@routes.Application.login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        } else {
+                            <li><a href="@routes.Application.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+
