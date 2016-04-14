@@ -5,10 +5,7 @@ import models.Produto;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.funcionario;
-import views.html.index;
-import views.html.produto;
-import views.html.produtos;
+import views.html.*;
 
 
 /**
