@@ -69,3 +69,12 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+a:hover{
+    text-decoration: none;
+}
+a .well {
+    transition: background-color 0.4s;
+}
+a .well:hover{
+    background-color: lightgray;
+}

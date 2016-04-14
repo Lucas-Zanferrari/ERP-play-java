@@ -1,12 +1,12 @@
 package models;
 
 import javax.persistence.*;
-import javax.validation.Constraint;
 
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by lucaszanferrari on 9/04/2016.
@@ -39,6 +39,10 @@ public class Funcionario extends Model {
     public static Finder<String,Funcionario> find = new Finder<String,Funcionario>(
             String.class, Funcionario.class
     );
+
+    public static List<Funcionario> list(){
+        return find.all();
+    }
 
     public static Funcionario authenticate(String usuario, String senha) {
         return find.where().eq("usuario", usuario)

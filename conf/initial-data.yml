@@ -1,12 +1,11 @@
-
 - !!models.Funcionario
     nome:   Gerente
     usuario: gerente
-    senha: 123456
+    senha: gerente
     nivel_acesso: manager
 
 - !!models.Funcionario
     nome:   Usuario
     usuario: usuario
-    senha: 123456
+    senha: usuario
     nivel_acesso: regular

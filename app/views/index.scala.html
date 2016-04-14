@@ -5,7 +5,15 @@
     </div>
 
     <div class="col-sm-8 text-left">
-        @conteudo
+        @if(menuLateral == menuProdutos) {
+            @produtos(Produto.list(), null)
+        }
+        @if(menuLateral == menuFuncionarios) {
+            @funcionarios(Funcionario.list(), null)
+        }
+        @if(menuLateral == menuComandas) {
+            @comandas(Comanda.list(), null)
+        }
         @if(message!=null) {
             <div class="alert alert-success alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -14,7 +22,7 @@
         }
     </div>
 
-    <!-- @produtos(Produto.list(), null) -->
+
     <div class="col-sm-2 sidenav">
     </div>
 @footer()
