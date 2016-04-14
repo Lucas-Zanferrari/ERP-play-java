@@ -18,7 +18,7 @@ public class Application extends Controller {
                     routes.Application.login()
             );
         }
-        return ok(index.render(null));
+        return ok(index.render(null, null, null));
     }
 
     public static Result login() {

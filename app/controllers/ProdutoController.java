@@ -34,7 +34,7 @@ public class ProdutoController extends Controller {
         } else {
             Produto produtoObj = form.get();
             produtoObj.save();
-            return ok(index.render("Produto Cadastrado com Sucesso"));
+            return ok(index.render("Produto Cadastrado com Sucesso", null, null));
         }
     }
 

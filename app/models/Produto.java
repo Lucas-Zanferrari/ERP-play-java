@@ -15,22 +15,19 @@ import java.util.List;
  */
 @Entity
 public class Produto extends Model {
+    private Date editado_em;
+    private Funcionario editado_por;
 
     @Id
     private int id;
-
     @Constraints.Required
     private String nome;
-
-    private Date editado_em;
-    private Funcionario editado_por;
     @Constraints.Required
     private int qtd_estoque;
     @Constraints.Required
     private String descricao;
     @Constraints.Required
     private float preco;
-
 
     public static Finder<String,Produto> find = new Finder<String,Produto>(
             String.class, Produto.class

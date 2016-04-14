@@ -1,12 +1,12 @@
 @(myForm: play.data.Form[Funcionario],message:String)
 
 <html>
-    @header()
+    @header("")
     @menu()
 
     @if(message!="") {
         <div class="alert alert-success" role="alert">
-        @message
+            @message
         </div>
     }
     @if(myForm.hasGlobalErrors()) {

@@ -1,7 +1,8 @@
+@(title: String)
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Login: Sistema de Automação Comercial</title>
+        <title>@title</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,16 +33,26 @@
                             <li><a href="#">Obter suporte</a></li>
                         } else {
                             @if(session.get("nivelAcesso")=="manager") {
-
+                                <li><a href="#">Novo funcionário</a></li>
+                                <li><a href="#">Novo produto</a></li>
+                                <li><a href="#">Nova comanda</a></li>
+                                <li><a href="#">Lista de funcionários</a></li>
+                                <li><a href="#">Lista de produtos</a></li>
+                                <li><a href="#">Lista de comandas</a></li>
+                                <li><a href="#">Obter suporte</a></li>
                             }
                             @if(session.get("nivelAcesso")=="regular") {
-
+                                <li><a href="#">Novo produto</a></li>
+                                <li><a href="#">Nova comanda</a></li>
+                                <li><a href="#">Lista de produtos</a></li>
+                                <li><a href="#">Lista de comandas</a></li>
+                                <li><a href="#">Obter suporte</a></li>
                             }
                         }
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         @if(session().isEmpty) {
-                            <li class="active"><a href="@routes.Application.login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <li><a href="@routes.Application.login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         } else {
                             <li><a href="@routes.Application.logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                         }

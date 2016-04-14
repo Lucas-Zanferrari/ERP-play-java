@@ -26,8 +26,8 @@ create table funcionario (
 
 create table produto (
   id                        integer not null,
-  nome                      varchar(255),
   editado_em                timestamp,
+  nome                      varchar(255),
   qtd_estoque               integer,
   descricao                 varchar(255),
   preco                     float,

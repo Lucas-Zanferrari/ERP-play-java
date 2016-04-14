@@ -1,34 +1,33 @@
 @(message: String, loginForm: Form[Login])
 
-    @header()
-            </div>
-            <div class="col-sm-8 text-left">
-                <br />
-                <h1>Bem vindo(a)!</h1>
-                <h4>Preencha o formulário de login e clique em Enviar para começar</h4>
-                <hr>
-                <form class="form-signin" method="post" action="@routes.Application.authenticate()">
-                    <h3 class="form-signin-heading">Formulário de login</h3>
-                    <label for="inputUsername" class="sr-only">Endereço de email</label>
-                    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Usuário" required autofocus>
-                    <label for="inputPassword" class="sr-only">Senha</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
-                    @if(message!=null) {
-                        <br />
-                        <div class="alert alert-danger text-center" role="alert">
-                            @message
-                        </div>
-                    }
-                </form>
-
-                <br />
-
-            </div>
-
-            <div class="col-sm-2 sidenav">
-            </div>
+@header("Sistema de Automação Comercial - Login")
         </div>
-    </div>
+        <div class="col-sm-8 text-left">
+            <br />
+            <h1>Bem vindo(a)!</h1>
+            <h4>Preencha o formulário de login e clique em Enviar para começar</h4>
+            <hr>
+            <form class="form-signin" method="post" action="@routes.Application.authenticate()">
+                <h3 class="form-signin-heading">Formulário de login</h3>
+                <label for="inputUsername" class="sr-only">Endereço de email</label>
+                <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Usuário" required autofocus>
+                <label for="inputPassword" class="sr-only">Senha</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                @if(message!=null) {
+                    <br />
+                    <div class="alert alert-danger text-center" role="alert">
+                        @message
+                    </div>
+                }
+            </form>
+
+            <br />
+
+        </div>
+
+        <div class="col-sm-2 sidenav">
+        </div>
+
 @footer()
 
