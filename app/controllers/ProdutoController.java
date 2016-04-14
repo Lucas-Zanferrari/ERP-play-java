@@ -1,12 +1,10 @@
 package controllers;
 
-import models.Funcionario;
 import models.Produto;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
-
 
 /**
  * Created by dumorango on 4/11/16.

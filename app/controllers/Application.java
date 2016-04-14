@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Funcionario;
-import models.Produto;
 import play.data.*;
 import play.mvc.*;
 

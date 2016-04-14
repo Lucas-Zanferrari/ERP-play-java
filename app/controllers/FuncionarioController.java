@@ -1,12 +1,10 @@
 package controllers;
 
 import models.Funcionario;
-import org.apache.commons.lang3.text.FormatFactory;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.funcionario;
-
 
 /**
  * Created by dumorango on 4/11/16.
