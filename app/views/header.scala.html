@@ -38,14 +38,15 @@
                                 <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
                                 <li><a href="@routes.FuncionarioController.list()">Lista de funcionários</a></li>
                                 <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
-                                <li><a href="@routes.ComandaController.list()">Lista de comandas</a></li>
+                                <li><a href="@routes.Application.index()">Lista de comandas</a></li>
+                                <li><a href="#">Estatísticas</a>
                                 <li><a href="#">Obter suporte</a></li>
                             }
                             @if(session.get("nivelAcesso")=="regular") {
-                                <li><a href="@routes.ProdutoController.index()">Novo_produto</a></li>
+                                <li><a href="@routes.ProdutoController.index()">Novo produto</a></li>
                                 <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
                                 <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
-                                <li><a href="@routes.ComandaController.list()">Lista de comandas</a></li>
+                                <li><a href="@routes.Application.index()">Lista de comandas</a></li>
                                 <li><a href="#">Obter suporte</a></li>
                             }
                         }

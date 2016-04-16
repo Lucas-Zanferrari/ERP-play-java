@@ -16,7 +16,7 @@ public class Application extends Controller {
                     routes.Application.login()
             );
         }
-        return ok(index.render("", menuComandas.apply(), comandas.apply(Comanda.list(), "")));
+        return ok(index.render("", "comanda", comandas.apply(Comanda.list(), "")));
     }
 
     public static Result login() {

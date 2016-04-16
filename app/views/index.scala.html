@@ -1,24 +1,24 @@
-@(message: String, menuLateral: Html, conteudo: Html)
+@(message: String, tipo_menu_lateral: String, conteudo: Html)
 
 @header("Sistema de Automação Comercial")
-        @menuLateral
+        @menu_lateral(tipo_menu_lateral)
     </div>
 
     <div class="col-sm-8 text-left">
-        @if(menuLateral == menuProdutos) {
+        @if(tipo_menu_lateral == "produto") {
             @produtos(Produto.list(), null)
         } else {
-            @if(menuLateral == menuFuncionarios) {
+            @if(tipo_menu_lateral == "funcionario") {
                 @funcionarios(Funcionario.list(), null)
             } else {
-                @if(menuLateral == menuComandas) {
+                @if(tipo_menu_lateral == "comanda") {
                     @comandas(Comanda.list(), null)
                 } else {
                     @conteudo
                 }
             }
         }
-        @if(message!=null) {
+        @if(message!="") {
             <div class="alert alert-success alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 @message
