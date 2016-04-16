@@ -15,7 +15,7 @@ import static play.data.Form.form;
 public class Application extends Controller {
 
     public static Result index() {
-        if(session().get("nome")==null){
+        if(session().get("nome") == null){
             return redirect(
                     routes.Application.login()
             );
