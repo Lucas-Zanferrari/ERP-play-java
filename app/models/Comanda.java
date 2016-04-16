@@ -2,6 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Created by lucaszanferrari on 9/04/2016.
  */
+@Entity
 public class Comanda extends Model {
     private int cpf_cliente;
     private Date data_hora_encerramento;

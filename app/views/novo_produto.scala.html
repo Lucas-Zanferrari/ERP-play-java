@@ -1,9 +1,5 @@
 @(myForm: play.data.Form[Produto],message:String)
 
-<html>
-    @header("")
-    @menu()
-
     @if(message!="") {
         <div class="alert alert-success" role="alert">
         @message
@@ -55,5 +51,4 @@
     }
     <button type="submit" class="btn btn-default">Cadastrar</button>
 </form>
-    @footer()
-</html>
+

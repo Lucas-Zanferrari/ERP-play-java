@@ -3,20 +3,25 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                                controllers.Application.index
 
-GET     /login                  controllers.Application.login()
-GET     /logout                 controllers.Application.logout()
-POST    /login                      controllers.Application.authenticate()
+GET     /login                           controllers.Application.login()
+GET     /logout                          controllers.Application.logout()
+POST    /login                           controllers.Application.authenticate()
 
-GET     /funcionario                    controllers.FuncionarioController.index()
-POST    /funcionario                    controllers.FuncionarioController.create()
+GET     /novo_funcionario                controllers.FuncionarioController.index()
+POST    /novo_funcionario                controllers.FuncionarioController.create()
+POST    /funcionarios                    controllers.FuncionarioController.list()
 
-GET     /produto                    controllers.ProdutoController.index()
-POST    /produto                    controllers.ProdutoController.create()
-POST    /produtos                   controllers.ProdutoController.list()
+GET     /novo_produto                    controllers.ProdutoController.index()
+POST    /novo_produto                    controllers.ProdutoController.create()
+POST    /produtos                        controllers.ProdutoController.list()
+
+GET     /nova_comanda                    controllers.ComandaController.index()
+POST    /nova_comanda                    controllers.ComandaController.create()
+POST    /comandas                        controllers.ComandaController.list()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file                    controllers.Assets.at(path="/public", file)
 
     

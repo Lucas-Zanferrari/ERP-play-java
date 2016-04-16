@@ -7,12 +7,16 @@
     <div class="col-sm-8 text-left">
         @if(menuLateral == menuProdutos) {
             @produtos(Produto.list(), null)
-        }
-        @if(menuLateral == menuFuncionarios) {
-            @funcionarios(Funcionario.list(), null)
-        }
-        @if(menuLateral == menuComandas) {
-            @comandas(Comanda.list(), null)
+        } else {
+            @if(menuLateral == menuFuncionarios) {
+                @funcionarios(Funcionario.list(), null)
+            } else {
+                @if(menuLateral == menuComandas) {
+                    @comandas(Comanda.list(), null)
+                } else {
+                    @conteudo
+                }
+            }
         }
         @if(message!=null) {
             <div class="alert alert-success alert-dismissible" role="alert">

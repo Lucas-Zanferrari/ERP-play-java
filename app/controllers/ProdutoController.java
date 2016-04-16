@@ -17,19 +17,19 @@ public class ProdutoController extends Controller {
                     routes.Application.login()
             );
         }
-        Form<Produto> form = Form.form(Produto.class);
-        return ok(produto.render(form,""));
+        Form<Produto> produtoForm = Form.form(Produto.class);
+        return ok(index.render("", null, novo_produto.apply(produtoForm,"")));
     }
 
     public static Result create(){
-        Form<Produto> form = Form.form(Produto.class);
-        form = form.bindFromRequest();
-        if (form.hasErrors()) {
-            return badRequest(produto.render(form,""));
+        Form<Produto> produtoForm = Form.form(Produto.class);
+        produtoForm = produtoForm.bindFromRequest();
+        if (produtoForm.hasErrors()) {
+            return badRequest(novo_produto.render(produtoForm,""));
         } else {
-            Produto produtoObj = form.get();
+            Produto produtoObj = produtoForm.get();
             produtoObj.save();
-            return ok(index.render("Produto Cadastrado com Sucesso", null, null));
+            return ok(index.render("", null, novo_produto.apply(produtoForm,"Produto cadastrado com sucesso.")));
         }
     }
 

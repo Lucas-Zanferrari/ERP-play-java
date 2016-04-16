@@ -3,6 +3,16 @@
 
 # --- !Ups
 
+create table comanda (
+  id                        integer not null,
+  cpf_cliente               integer,
+  data_hora_encerramento    timestamp,
+  qtd_produtos              integer,
+  preco_total               float,
+  data_hora_abertura        timestamp,
+  constraint pk_comanda primary key (id))
+;
+
 create table funcionario (
   id                        integer not null,
   nome                      varchar(255),
@@ -34,6 +44,8 @@ create table produto (
   constraint pk_produto primary key (id))
 ;
 
+create sequence comanda_seq;
+
 create sequence funcionario_seq;
 
 create sequence produto_seq;
@@ -45,11 +57,15 @@ create sequence produto_seq;
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
+drop table if exists comanda;
+
 drop table if exists funcionario;
 
 drop table if exists produto;
 
 SET REFERENTIAL_INTEGRITY TRUE;
+
+drop sequence if exists comanda_seq;
 
 drop sequence if exists funcionario_seq;
 

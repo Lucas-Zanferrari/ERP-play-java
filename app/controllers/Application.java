@@ -3,7 +3,7 @@ package controllers;
 import models.Funcionario;
 import play.data.*;
 import play.mvc.*;
-
+import models.Comanda;
 import views.html.*;
 
 import static play.data.Form.form;
@@ -16,7 +16,7 @@ public class Application extends Controller {
                     routes.Application.login()
             );
         }
-        return ok(index.render(null, menuComandas.apply(), null));
+        return ok(index.render("", menuComandas.apply(), comandas.apply(Comanda.list(), "")));
     }
 
     public static Result login() {

@@ -1,0 +1,20 @@
+@(myForm: play.data.Form[Comanda], message:String)
+
+  @if(message!="") {
+    <div class="alert alert-success" role="alert">
+    @message
+    </div>
+  }
+  @if(myForm.hasGlobalErrors()) {
+    <ul>
+    @for(error <- myForm.globalErrors) {
+      <li>@error.message</li>
+    }
+    </ul>
+  }
+<form method="post" action="@routes.ComandaController.create()">
+
+
+
+
+</form>

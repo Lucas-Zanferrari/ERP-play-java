@@ -34,7 +34,7 @@ public class Funcionario extends Model {
     private String senha;
     private String turno;
 
-    public static Finder<String,Funcionario> find = new Finder<String,Funcionario>(
+    public static Finder<String, Funcionario> find = new Finder<String, Funcionario>(
             String.class, Funcionario.class
     );
 

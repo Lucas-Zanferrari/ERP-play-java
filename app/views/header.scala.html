@@ -33,19 +33,19 @@
                             <li><a href="#">Obter suporte</a></li>
                         } else {
                             @if(session.get("nivelAcesso")=="manager") {
-                                <li><a href="#">Novo funcionário</a></li>
-                                <li><a href="#">Novo produto</a></li>
-                                <li><a href="#">Nova comanda</a></li>
-                                <li><a href="#">Lista de funcionários</a></li>
-                                <li><a href="#">Lista de produtos</a></li>
-                                <li><a href="#">Lista de comandas</a></li>
+                                <li><a href="@routes.FuncionarioController.index()">Novo funcionário</a></li>
+                                <li><a href="@routes.ProdutoController.index()">Novo produto</a></li>
+                                <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
+                                <li><a href="@routes.FuncionarioController.list()">Lista de funcionários</a></li>
+                                <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
+                                <li><a href="@routes.ComandaController.list()">Lista de comandas</a></li>
                                 <li><a href="#">Obter suporte</a></li>
                             }
                             @if(session.get("nivelAcesso")=="regular") {
-                                <li><a href="#">Novo produto</a></li>
-                                <li><a href="#">Nova comanda</a></li>
-                                <li><a href="#">Lista de produtos</a></li>
-                                <li><a href="#">Lista de comandas</a></li>
+                                <li><a href="@routes.ProdutoController.index()">Novo_produto</a></li>
+                                <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
+                                <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
+                                <li><a href="@routes.ComandaController.list()">Lista de comandas</a></li>
                                 <li><a href="#">Obter suporte</a></li>
                             }
                         }

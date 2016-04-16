@@ -1,1 +1,48 @@
-@(funcionarios: java.util.List[Funcionario], message:String))
+@(funcionarios: java.util.List[Funcionario], message: String))
+@if(funcionarios.isEmpty){
+    <div class="alert alert-danger" role="alert">
+        Não há funcionários cadastrados
+    </div>
+} else {
+    <table class="table table-condensed">
+        <tr>
+            <td>Nome</td>
+            <td>Data de nascimento</td>
+            <td>CPF</td>
+            <td>RG</td>
+            <td>Carteira de trabalho</td>
+            <td>Endereço</td>
+            <td>Número</td>
+            <td>Bairro</td>
+            <td>CEP</td>
+            <td>Data de contratação</td>
+            <td>Nível de acesso</td>
+            <td>Cargo</td>
+            <td>Salário base</td>
+            <td>Usuário</td>
+            <td>Senha</td>
+            <td>Turno</td>
+        </tr>
+
+        @for(funcionario <- funcionarios) {
+            <tr class="active">
+                <td>@funcionario.getNome()</td>
+                <td>@funcionario.getData_nascimento()</td>
+                <td>@funcionario.getCpf()</td>
+                <td>@funcionario.getRg()</td>
+                <td>@funcionario.getCarteira_trabalho()</td>
+                <td>@funcionario.getEndereco()</td>
+                <td>@funcionario.getNumero()</td>
+                <td>@funcionario.getBairro()</td>
+                <td>@funcionario.getCep()</td>
+                <td>@funcionario.getData_contratacao()</td>
+                <td>@funcionario.getNivel_acesso()</td>
+                <td>@funcionario.getCargo()</td>
+                <td>@funcionario.getSalario_base()</td>
+                <td>@funcionario.getUsuario()</td>
+                <td>@funcionario.getSenha()</td>
+                <td>@funcionario.getTurno()</td>
+            </tr>
+        }
+    </table>
+}
