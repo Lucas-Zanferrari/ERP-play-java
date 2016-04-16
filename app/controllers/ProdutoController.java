@@ -18,7 +18,7 @@ public class ProdutoController extends Controller {
             );
         }
         Form<Produto> produtoForm = Form.form(Produto.class);
-        return ok(index.render("", null, novo_produto.apply(produtoForm,"")));
+        return ok(index.render("", "", novo_produto.apply(produtoForm,"")));
     }
 
     public static Result create(){
@@ -29,7 +29,7 @@ public class ProdutoController extends Controller {
         } else {
             Produto produtoObj = produtoForm.get();
             produtoObj.save();
-            return ok(index.render("", null, novo_produto.apply(produtoForm,"Produto cadastrado com sucesso.")));
+            return ok(index.render("", "", novo_produto.apply(produtoForm,"Produto cadastrado com sucesso.")));
         }
     }
 
