@@ -1,7 +1,9 @@
 @(message: String, tipo_menu_lateral: String, conteudo: Html)
 
 @header("Sistema de Automação Comercial")
+    @if(tipo_menu_lateral != "") {
         @menu_lateral(tipo_menu_lateral)
+    }
     </div>
 
     <div class="col-sm-8 text-left">
