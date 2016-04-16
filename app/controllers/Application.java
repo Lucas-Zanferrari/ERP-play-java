@@ -1,10 +1,14 @@
 package controllers;
 
 import models.Funcionario;
-import play.data.*;
-import play.mvc.*;
 import models.Comanda;
-import views.html.*;
+import play.mvc.Result;
+import play.mvc.Controller;
+import play.data.Form;
+import play.data.DynamicForm;
+import views.html.index;
+import views.html.comandas;
+import views.html.login;
 
 import static play.data.Form.form;
 

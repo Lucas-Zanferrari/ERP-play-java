@@ -4,7 +4,9 @@ import models.Funcionario;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.novo_funcionario;
+import views.html.index;
+import views.html.funcionarios;
 
 /**
  * Created by dumorango on 4/11/16.

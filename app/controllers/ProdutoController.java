@@ -4,7 +4,9 @@ import models.Produto;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.index;
+import views.html.novo_produto;
+import views.html.produtos;
 
 /**
  * Created by dumorango on 4/11/16.

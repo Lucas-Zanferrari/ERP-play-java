@@ -4,7 +4,9 @@ import models.Comanda;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.index;
+import views.html.nova_comanda;
+import views.html.comandas;
 
 public class ComandaController extends Controller {
 
