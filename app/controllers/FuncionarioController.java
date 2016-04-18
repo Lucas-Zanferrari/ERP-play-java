@@ -20,7 +20,7 @@ public class FuncionarioController extends Controller {
             );
         }
         Form<Funcionario> userForm = Form.form(Funcionario.class);
-        return ok(index.render("", "", novo_funcionario.apply(userForm, "")));
+        return ok(index.render("", "", novo_funcionario.render(userForm, "")));
     }
 
     public static Result create(){
@@ -32,11 +32,11 @@ public class FuncionarioController extends Controller {
             Funcionario user = userForm.get();
             user.setNivel_acesso("regular");
             user.save();
-            return ok(index.render("", "", novo_funcionario.apply(userForm, "Usuário cadastrado com sucesso")));
+            return ok(index.render("", "", novo_funcionario.render(userForm, "Usuário cadastrado com sucesso")));
         }
     }
 
     public static Result list(){
-        return ok(funcionarios.render(Funcionario.list(), null));
+        return ok(index.render("", "funcionário", funcionarios.render(Funcionario.list(), null)));
     }
 }

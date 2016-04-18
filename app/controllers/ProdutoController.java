@@ -20,7 +20,7 @@ public class ProdutoController extends Controller {
             );
         }
         Form<Produto> produtoForm = Form.form(Produto.class);
-        return ok(index.render("", "", novo_produto.apply(produtoForm,"")));
+        return ok(index.render("", "", novo_produto.render(produtoForm,"")));
     }
 
     public static Result create(){
@@ -31,11 +31,11 @@ public class ProdutoController extends Controller {
         } else {
             Produto produtoObj = produtoForm.get();
             produtoObj.save();
-            return ok(index.render("", "", novo_produto.apply(produtoForm,"Produto cadastrado com sucesso.")));
+            return ok(index.render("", "", novo_produto.render(produtoForm,"Produto cadastrado com sucesso.")));
         }
     }
 
     public static Result list(){
-        return ok(produtos.render(Produto.list(),null));
+        return ok(index.render("", "produto", produtos.render(Produto.list(),null)));
     }
 }

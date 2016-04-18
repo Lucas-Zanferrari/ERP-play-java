@@ -17,7 +17,7 @@ public class ComandaController extends Controller {
             );
         }
         Form<Comanda> comandaForm = Form.form(Comanda.class);
-        return ok(index.render("", "", nova_comanda.apply(comandaForm, "")));
+        return ok(index.render("", "", nova_comanda.render(comandaForm, "")));
     }
 
     public static Result create(){
@@ -28,11 +28,7 @@ public class ComandaController extends Controller {
         } else {
             Comanda comanda = comandaForm.get();
             comanda.save();
-            return ok(index.render("", "", nova_comanda.apply(comandaForm, "Comanda adicionada com sucesso.")));
+            return ok(index.render("", "", nova_comanda.render(comandaForm, "Comanda adicionada com sucesso.")));
         }
-    }
-
-    public static Result list(){
-        return ok(comandas.render(Comanda.list(), null));
     }
 }

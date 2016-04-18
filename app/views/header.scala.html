@@ -24,12 +24,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img id="logo" src="@routes.Assets.at("images/bread-icon.png")" /></a>
+                    <a class="navbar-brand" href="@routes.Application.index()"><img id="logo" src="@routes.Assets.at("images/bread-icon.png")" /></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         @if(session().isEmpty) {
-                            <li><a href="#">Sistema de Automação Comercial</a></li>
+                            <li><a href="@routes.Application.index()">Sistema de Automação Comercial</a></li>
                             <li><a href="#">Obter suporte</a></li>
                         } else {
                             @if(session.get("nivelAcesso")=="manager") {
