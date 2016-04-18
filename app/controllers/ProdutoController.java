@@ -36,6 +36,6 @@ public class ProdutoController extends Controller {
     }
 
     public static Result list(){
-        return ok(produtos.render(Produto.list(),null));
+        return ok(index.render("", "produto", produtos.render(Produto.list(),null)));
     }
 }

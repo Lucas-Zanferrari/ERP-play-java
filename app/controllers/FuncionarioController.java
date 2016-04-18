@@ -37,6 +37,6 @@ public class FuncionarioController extends Controller {
     }
 
     public static Result list(){
-        return ok(funcionarios.render(Funcionario.list(), null));
+        return ok(index.render("", "funcionário", funcionarios.render(Funcionario.list(), null)));
     }
 }

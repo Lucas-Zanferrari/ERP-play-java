@@ -14,6 +14,9 @@ a #logo {
     background-color: white;
     height: 100%;
 }
+.col-sm-8 h1 {
+    margin: 0;
+}
 /* Set gray background color and 100% height */
 .sidenav {
     padding-top: 20px;
@@ -42,7 +45,7 @@ body {
 }
 .form-signin {
     max-width: 330px;
-    padding: 15px;
+    padding: 10px;
     margin: 0 auto;
 }
 .form-signin .form-signin-heading {

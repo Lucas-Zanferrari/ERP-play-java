@@ -32,7 +32,4 @@ public class ComandaController extends Controller {
         }
     }
 
-    public static Result list(){
-        return ok(comandas.render(Comanda.list(), null));
-    }
 }
