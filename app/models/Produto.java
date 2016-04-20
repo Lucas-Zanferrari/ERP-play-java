@@ -25,6 +25,8 @@ public class Produto extends Model {
     private String descricao;
     @Constraints.Required
     private float preco;
+    @Constraints.Required
+    private Date adicionado_em;
 
     public static Finder<String,Produto> find = new Finder<String,Produto>(
             String.class, Produto.class
@@ -88,5 +90,13 @@ public class Produto extends Model {
 
     public void setPreco(float preco) {
         this.preco = preco;
+    }
+
+    public Date getAdicionado_em(){
+        return adicionado_em;
+    }
+
+    public void setAdicionado_em(Date adicionado_em){
+        this.adicionado_em = adicionado_em;
     }
 }

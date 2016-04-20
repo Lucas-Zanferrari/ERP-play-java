@@ -2,10 +2,5 @@
     nome:   Gerente
     usuario: gerente
     senha: gerente
-    nivel_acesso: manager
-
-- !!models.Funcionario
-    nome:   Usuario
-    usuario: usuario
-    senha: usuario
-    nivel_acesso: regular
+    data_contratacao: 1993-03-13
+    nivel_acesso: Gerente

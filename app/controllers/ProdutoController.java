@@ -14,7 +14,7 @@ import views.html.produtos;
 public class ProdutoController extends Controller {
 
     public static Result index() {
-        if(session().get("nome")==null){
+        if(session().get("nome") ==null){
             return redirect(
                     routes.Application.login()
             );
@@ -27,11 +27,11 @@ public class ProdutoController extends Controller {
         Form<Produto> produtoForm = Form.form(Produto.class);
         produtoForm = produtoForm.bindFromRequest();
         if (produtoForm.hasErrors()) {
-            return badRequest(novo_produto.render(produtoForm,""));
+            return badRequest(index.render("", "", novo_produto.render(produtoForm, "")));
         } else {
             Produto produtoObj = produtoForm.get();
             produtoObj.save();
-            return ok(index.render("", "", novo_produto.render(produtoForm,"Produto cadastrado com sucesso.")));
+            return ok(index.render("", "", novo_produto.render(produtoForm, "Produto cadastrado com sucesso.")));
         }
     }
 

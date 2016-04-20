@@ -6,7 +6,6 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.index;
 import views.html.nova_comanda;
-import views.html.comandas;
 
 public class ComandaController extends Controller {
 
@@ -24,7 +23,7 @@ public class ComandaController extends Controller {
         Form<Comanda> comandaForm = Form.form(Comanda.class);
         comandaForm = comandaForm.bindFromRequest();
         if (comandaForm.hasErrors()) {
-            return badRequest(nova_comanda.render(comandaForm,""));
+            return badRequest(index.render("", "", nova_comanda.render(comandaForm, "")));
         } else {
             Comanda comanda = comandaForm.get();
             comanda.save();

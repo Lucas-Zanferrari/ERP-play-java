@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
@@ -6,22 +7,43 @@
 a #logo {
     margin-top: -7px !important;
 }
+fieldset {
+    margin-bottom: 60px;
+}
+.col1 {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+}
+.col2 {
+    float: right;
+    width: 50%;
+    padding-left: 10px;
+}
 .row.content {
-    height: 525px;
+    min-height: 525px;
+    display: flex;
 }
 .col-sm-8 {
-    padding-top: 20px;
+    padding: 20px;
     background-color: white;
-    height: 100%;
 }
 .col-sm-8 h1 {
     margin: 0;
+}
+a:hover{
+    text-decoration: none;
+}
+a .well {
+    transition: background-color 0.4s;
+}
+a .well:hover{
+    background-color: lightgray;
 }
 /* Set gray background color and 100% height */
 .sidenav {
     padding-top: 20px;
     background-color: #f1f1f1;
-    height: 100%;
 }
 /* Set black background color, white text and some padding */
 footer {
@@ -37,10 +59,16 @@ footer {
     }
     .row.content {
         height: auto;
+        display: block;
+    }
+    .col1, .col2 {
+        float: none;
+        width: 100%;
+        padding: 0;
     }
 }
 body {
-    padding-bottom: 0px;
+    padding-bottom: 0;
     background-color: #555;
 }
 .form-signin {
@@ -73,12 +101,4 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-a:hover{
-    text-decoration: none;
-}
-a .well {
-    transition: background-color 0.4s;
-}
-a .well:hover{
-    background-color: lightgray;
-}
+

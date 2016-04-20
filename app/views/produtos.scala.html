@@ -7,9 +7,10 @@
     <table class="table table-condensed">
         <tr>
             <td>Nome</td>
-            <td>Descricao</td>
+            <td>Descrição</td>
             <td>Preço (R&#36)</td>
             <td>Estoque</td>
+            <td>Data do cadastro</td>
         </tr>
 
         @for(produto <- produtos) {
@@ -18,6 +19,7 @@
                 <td>@produto.getDescricao()</td>
                 <td>@produto.getPreco()</td>
                 <td>@produto.getQtd_estoque()</td>
+                <td>@produto.getAdicionado_em().format("dd/MM/yyyy")</td>
             </tr>
         }
     </table>

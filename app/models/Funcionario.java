@@ -16,23 +16,38 @@ public class Funcionario extends Model {
     private int id;
     @Constraints.Required
     private String nome;
-    private Date data_nascimento;
-    private int cpf;
-    private String rg;
-    private int carteira_trabalho;
-    private String endereco;
-    private int numero;
-    private String bairro;
-    private int cep;
-    private Date data_contratacao;
-    private String nivel_acesso;
-    private String cargo;
-    private float salario_base;
     @Constraints.Required
     private String usuario;
     @Constraints.Required
     private String senha;
+    @Constraints.Required
+    private Date data_nascimento;
+    @Constraints.Required
+    private String cpf;
+    @Constraints.Required
+    private String rg;
+    @Constraints.Required
+    private String carteira_trabalho;
+    @Constraints.Required
+    private String endereco;
+    @Constraints.Required
+    private int numero;
+    @Constraints.Required
+    private String bairro;
+    @Constraints.Required
+    private String cep;
+    @Constraints.Required
+    private Date data_contratacao;
+    @Constraints.Required
+    private String nivel_acesso;
+    @Constraints.Required
+    private String cargo;
+    @Constraints.Required
+    private float salario_base;
+    @Constraints.Required
     private String turno;
+    @Constraints.Required
+    private String telefone;
 
     public static Finder<String, Funcionario> find = new Finder<String, Funcionario>(
             String.class, Funcionario.class
@@ -71,11 +86,11 @@ public class Funcionario extends Model {
         this.data_nascimento = data_nascimento;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -87,11 +102,11 @@ public class Funcionario extends Model {
         this.rg = rg;
     }
 
-    public int getCarteira_trabalho() {
+    public String getCarteira_trabalho() {
         return carteira_trabalho;
     }
 
-    public void setCarteira_trabalho(int carteira_trabalho) {
+    public void setCarteira_trabalho(String carteira_trabalho) {
         this.carteira_trabalho = carteira_trabalho;
     }
 
@@ -119,11 +134,11 @@ public class Funcionario extends Model {
         this.bairro = bairro;
     }
 
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
@@ -181,5 +196,13 @@ public class Funcionario extends Model {
 
     public void setTurno(String turno) {
         this.turno = turno;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 }

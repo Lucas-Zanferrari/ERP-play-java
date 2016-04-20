@@ -16,21 +16,22 @@ create table comanda (
 create table funcionario (
   id                        integer not null,
   nome                      varchar(255),
+  usuario                   varchar(255),
+  senha                     varchar(255),
   data_nascimento           timestamp,
-  cpf                       integer,
+  cpf                       varchar(255),
   rg                        varchar(255),
-  carteira_trabalho         integer,
+  carteira_trabalho         varchar(255),
   endereco                  varchar(255),
   numero                    integer,
   bairro                    varchar(255),
-  cep                       integer,
+  cep                       varchar(255),
   data_contratacao          timestamp,
   nivel_acesso              varchar(255),
   cargo                     varchar(255),
   salario_base              float,
-  usuario                   varchar(255),
-  senha                     varchar(255),
   turno                     varchar(255),
+  telefone                  varchar(255),
   constraint pk_funcionario primary key (id))
 ;
 
@@ -41,6 +42,7 @@ create table produto (
   qtd_estoque               integer,
   descricao                 varchar(255),
   preco                     float,
+  adicionado_em             timestamp,
   constraint pk_produto primary key (id))
 ;
 

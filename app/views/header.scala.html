@@ -32,7 +32,7 @@
                             <li><a href="@routes.Application.index()">Sistema de Automação Comercial</a></li>
                             <li><a href="#">Obter suporte</a></li>
                         } else {
-                            @if(session.get("nivelAcesso")=="manager") {
+                            @if(session.get("nivelAcesso")=="Gerente") {
                                 <li><a href="@routes.FuncionarioController.index()">Novo funcionário</a></li>
                                 <li><a href="@routes.ProdutoController.index()">Novo produto</a></li>
                                 <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
@@ -42,7 +42,7 @@
                                 <li><a href="#">Estatísticas</a>
                                 <li><a href="#">Obter suporte</a></li>
                             }
-                            @if(session.get("nivelAcesso")=="regular") {
+                            @if(session.get("nivelAcesso")=="Regular") {
                                 <li><a href="@routes.ProdutoController.index()">Novo produto</a></li>
                                 <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
                                 <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>

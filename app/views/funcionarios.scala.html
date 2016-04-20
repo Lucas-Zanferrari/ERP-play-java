@@ -7,28 +7,18 @@
     <table class="table table-condensed">
         <tr>
             <td>Nome</td>
-            <td>CPF</td>
-            <td>RG</td>
-            <td>Carteira de trabalho</td>
-            <td>Data de contratação</td>
             <td>Nível de acesso</td>
             <td>Cargo</td>
-            <td>Salário base</td>
-            <td>Usuário</td>
+            <td>Salário base (R&#036)</td>
             <td>Turno</td>
         </tr>
 
         @for(funcionario <- funcionarios) {
             <tr class="active">
                 <td>@funcionario.getNome()</td>
-                <td>@funcionario.getCpf()</td>
-                <td>@funcionario.getRg()</td>
-                <td>@funcionario.getCarteira_trabalho()</td>
-                <td>@funcionario.getData_contratacao()</td>
                 <td>@funcionario.getNivel_acesso()</td>
                 <td>@funcionario.getCargo()</td>
                 <td>@funcionario.getSalario_base()</td>
-                <td>@funcionario.getUsuario()</td>
                 <td>@funcionario.getTurno()</td>
             </tr>
         }

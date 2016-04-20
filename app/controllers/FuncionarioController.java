@@ -27,10 +27,9 @@ public class FuncionarioController extends Controller {
         Form<Funcionario> userForm = Form.form(Funcionario.class);
         userForm = userForm.bindFromRequest();
         if (userForm.hasErrors()) {
-            return badRequest(novo_funcionario.render(userForm,""));
+            return badRequest(index.render("", "", novo_funcionario.render(userForm, "")));
         } else {
             Funcionario user = userForm.get();
-            user.setNivel_acesso("regular");
             user.save();
             return ok(index.render("", "", novo_funcionario.render(userForm, "Usuário cadastrado com sucesso")));
         }
