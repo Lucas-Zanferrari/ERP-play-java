@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+import javax.validation.Constraint;
+
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 import java.util.Date;
@@ -60,6 +62,10 @@ public class Funcionario extends Model {
     public static Funcionario authenticate(String usuario, String senha) {
         return find.where().eq("usuario", usuario)
                 .eq("senha", senha).findUnique();
+    }
+
+    public static Funcionario byId(String id) {
+        return find.byId(id);
     }
 
     public int getId() {
