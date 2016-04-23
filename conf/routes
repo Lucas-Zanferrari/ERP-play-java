@@ -27,6 +27,9 @@ GET     /produtos                        controllers.ProdutoController.list()
 GET     /nova_comanda                    controllers.ComandaController.index()
 POST    /nova_comanda                    controllers.ComandaController.create()
 
+GET     /obter_suporte                   controllers.ObterAjudaController.index()
+POST    /obter_suporte                   controllers.ObterAjudaController.sendEmail()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                    controllers.Assets.at(path="/public", file)
 
