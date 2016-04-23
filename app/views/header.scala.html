@@ -40,7 +40,7 @@
                                 <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
                                 <li><a href="@routes.Application.index()">Lista de comandas</a></li>
                                 <li><a href="#">Estatísticas</a>
-                                <li><a href="#">Obter suporte</a></li>
+                                <li><a href="@routes.ObterAjudaController.index()">Obter suporte</a></li>
                             }
                             @if(session.get("nivelAcesso")=="Regular") {
                                 <li><a href="@routes.ProdutoController.index()">Novo produto</a></li>
