@@ -11,8 +11,8 @@ POST    /login                           controllers.Application.authenticate()
 
 GET    /novo_funcionario/             controllers.FuncionarioController.index(id:String = null)
 GET    /novo_funcionario/:funcionarioID                controllers.FuncionarioController.index(funcionarioID)
-POST   /novo_funcionario                controllers.FuncionarioController.create(id:String = null)
-POST    /novo_funcionario/:funcionarioID                controllers.FuncionarioController.create(funcionarioID)
+POST   /novo_funcionario                controllers.FuncionarioController.save(id:String = null)
+POST    /novo_funcionario/:funcionarioID                controllers.FuncionarioController.save(funcionarioID)
 GET    /funcionarios                    controllers.FuncionarioController.list()
 GET    /novo_funcionario/:funcionarioID/delete                controllers.FuncionarioController.delete(funcionarioID)
 

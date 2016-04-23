@@ -27,7 +27,7 @@ public class FuncionarioController extends Controller {
         return ok(index.render("", "", novo_funcionario.render(userForm, "")));
     }
 
-    public static Result create(String id){
+    public static Result save(String id){
         Form<Funcionario> userForm = Form.form(Funcionario.class);
         userForm = userForm.bindFromRequest();
         if (userForm.hasErrors()) {

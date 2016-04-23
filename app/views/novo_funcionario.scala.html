@@ -13,12 +13,12 @@
     </ul>
 }
 @if(myForm.value.getOrElse(null)==null) {
-    <form class="form-all-required" method="post" role="form" action="@routes.FuncionarioController.create(null)">
+    <form class="form-all-required" method="post" role="form" action="@routes.FuncionarioController.save(null)">
         @funcionario(myForm)
         <button type="submit" class="btn btn-lg btn-default center-block">Cadastrar</button>
     </form>
 }else{
-    <form class="form-all-required" method="post" role="form" action="@routes.FuncionarioController.create(myForm.get().getId.toString)">
+    <form class="form-all-required" method="post" role="form" action="@routes.FuncionarioController.save(myForm.get().getId.toString)">
         @funcionario(myForm)
         <button type="submit" class="btn btn-lg btn-default center-block">Editar</button>
     </form>
