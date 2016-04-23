@@ -13,11 +13,15 @@ GET    /novo_funcionario/             controllers.FuncionarioController.index(id
 GET    /novo_funcionario/:funcionarioID                controllers.FuncionarioController.index(funcionarioID)
 POST   /novo_funcionario                controllers.FuncionarioController.save(id:String = null)
 POST    /novo_funcionario/:funcionarioID                controllers.FuncionarioController.save(funcionarioID)
-GET    /funcionarios                    controllers.FuncionarioController.list()
 GET    /novo_funcionario/:funcionarioID/delete                controllers.FuncionarioController.delete(funcionarioID)
+GET    /funcionarios                    controllers.FuncionarioController.list()
 
-GET     /novo_produto                    controllers.ProdutoController.index()
-POST    /novo_produto                    controllers.ProdutoController.create()
+GET     /novo_produto                    controllers.ProdutoController.index(id:String = null)
+GET     /novo_produto/:produtoID                    controllers.ProdutoController.index(produtoID)
+POST    /novo_produto                    controllers.ProdutoController.create(id:String = null)
+POST    /novo_produto/:produtoID                    controllers.ProdutoController.create(produtoID)
+GET    /novo_produto/:produtoID/delete                    controllers.ProdutoController.delete(produtoID)
+
 GET     /produtos                        controllers.ProdutoController.list()
 
 GET     /nova_comanda                    controllers.ComandaController.index()

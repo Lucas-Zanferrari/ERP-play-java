@@ -36,6 +36,10 @@ public class Produto extends Model {
         return find.all();
     }
 
+    public static Produto byId(String id) {
+        return find.byId(id);
+    }
+
     public int getId() {
         return id;
     }
@@ -99,4 +103,5 @@ public class Produto extends Model {
     public void setAdicionado_em(Date adicionado_em){
         this.adicionado_em = adicionado_em;
     }
+
 }
