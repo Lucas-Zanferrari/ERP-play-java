@@ -34,7 +34,7 @@
                         } else {
                             @if(session.get("nivelAcesso")=="Gerente") {
                                 <li><a href="@routes.FuncionarioController.index("")">Novo funcionário</a></li>
-                                <li><a href="@routes.ProdutoController.index()">Novo produto</a></li>
+                                <li><a href="@routes.ProdutoController.index(null)">Novo produto</a></li>
                                 <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
                                 <li><a href="@routes.FuncionarioController.list()">Lista de funcionários</a></li>
                                 <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
@@ -43,7 +43,7 @@
                                 <li><a href="#">Obter suporte</a></li>
                             }
                             @if(session.get("nivelAcesso")=="Regular") {
-                                <li><a href="@routes.ProdutoController.index()">Novo produto</a></li>
+                                <li><a href="@routes.ProdutoController.index(null)">Novo produto</a></li>
                                 <li><a href="@routes.ComandaController.index()">Nova comanda</a></li>
                                 <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
                                 <li><a href="@routes.Application.index()">Lista de comandas</a></li>

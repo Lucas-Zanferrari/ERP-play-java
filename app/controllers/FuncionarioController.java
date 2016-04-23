@@ -50,7 +50,7 @@ public class FuncionarioController extends Controller {
         Funcionario funcionario = Funcionario.byId(id);
         String name = funcionario.getNome();
         funcionario.delete();
-        return ok(index.render("", "funcionário", funcionarios.render(Funcionario.list(), "Funcionário "+name+"removido com sucesso")));
+        return ok(index.render("", "funcionário", funcionarios.render(Funcionario.list(), "Funcionário "+name+" removido com sucesso")));
     }
 
     public static Result list(){
