@@ -1,19 +1,16 @@
-@(message: String, tipo_menu_lateral: String, conteudo: Html)
+@(message: String, tipo_view: String, conteudo: Html)
 
 @header("Sistema de Automação Comercial")
-    @if(tipo_menu_lateral != "") {
-        @menu_lateral(tipo_menu_lateral)
-    }
     </div>
 
     <div class="col-sm-8 text-left">
-        @if(tipo_menu_lateral == "produto") {
+        @if(tipo_view == "produto") {
             @produtos(Produto.list(), null)
         } else {
-            @if(tipo_menu_lateral == "funcionario") {
+            @if(tipo_view == "funcionario") {
                 @funcionarios(Funcionario.list(), null)
             } else {
-                @if(tipo_menu_lateral == "comanda") {
+                @if(tipo_view == "comanda") {
                     @comandas(Comanda.list(), null)
                 } else {
                     @conteudo
