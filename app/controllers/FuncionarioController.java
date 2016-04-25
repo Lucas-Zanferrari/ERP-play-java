@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Funcionario;
-import play.Logger;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
