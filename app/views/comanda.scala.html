@@ -51,18 +51,18 @@
       @if(myForm.field("data_hora_abertura").value() != null) {
           <div class="form-group" id="div_data_hora_abertura">
               <label for="data_hora_abertura" class="control-label">Data/hora de abertura</label>
-              <input type="datetime-local" disabled value="@myForm.field("adicionado_em").value()" class="form-control" id="data_hora_abertura" name="data_hora_abertura" placeholder="Data/hora de abertura">
+              <input type="datetime-local" disabled value="@myForm.field("adicionado_em").value()" class="form-control" id="data_hora_abertura" name="adicionado_em" placeholder="Data/hora de abertura">
           </div>
       } else {
           <div class="form-group" id="div_data_hora_abertura">
               <label for="data_hora_abertura" class="control-label">Data/hora de abertura</label>
-              <input type="datetime-local" disabled value="@(new Date().format("yyyy-MM-dd"))T@(new Date().format("hh:mm"))" class="form-control" id="data_hora_abertura" name="data_hora_abertura" placeholder="Data/hora de abertura">
+              <input type="datetime-local" disabled value="@(new Date().format("yyyy-MM-dd"))T@(new Date().format("hh:mm"))" class="form-control" id="data_hora_abertura" name="adicionado_em" placeholder="Data/hora de abertura">
           </div>
       }
 
       <div class="form-group" id="div_funcionarios">
           <label for="funcionarios" class="control-label">Funcionário(s) responsável(eis)</label>
-          <input disabled type="text" value="@session().get("nome") @if(myForm.field("funcionarios_responsaveis").value() != null) {@myForm.field("funcionarios_responsaveis").toString}" id="funcionarios" name="funcionarios" class="form-control">
+          <input disabled type="text" value="@session().get("nome") @if(myForm.field("funcionarios_responsaveis").value() != null) {@myForm.field("funcionarios_responsaveis").toString}" id="funcionarios" name="funcionarios_responsaveis" class="form-control">
       </div>
 
   </div>

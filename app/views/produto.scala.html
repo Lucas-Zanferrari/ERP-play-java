@@ -6,19 +6,19 @@
             @if(myForm.hasErrors){
                 <div class="form-group has-success has-feedback">
                     <label for="nome" class="control-label">Nome</label>
-                    <input type="text" value="@myForm.field("nome").value()" class="form-control" id="nome" name="nome" placeholder="Nome do produto">
+                    <input type="text" value="@myForm.field("nome").value()" class="form-control" id="nome" name="nome" placeholder="Nome do produto" autofocus required>
                     <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                 </div>
             } else {
                 <div class="form-group">
                     <label for="nome" class="control-label">Nome</label>
-                    <input type="text" value="@myForm.field("nome").value()" class="form-control" id="nome" name="nome" placeholder="Nome do produto">
+                    <input type="text" value="@myForm.field("nome").value()" class="form-control" id="nome" name="nome" placeholder="Nome do produto" autofocus required>
                 </div>
             }
         } else {
             <div class="form-group has-error has-feedback">
                 <label for="nome" class="control-label">Nome</label>
-                <input type="text" value="@myForm.field("nome").value()" class="form-control" id="nome" name="nome" placeholder="Nome do produto">
+                <input type="text" value="@myForm.field("nome").value()" class="form-control" id="nome" name="nome" placeholder="Nome do produto" autofocus required>
                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
             </div>
         }
@@ -27,19 +27,19 @@
             @if(myForm.hasErrors){
                 <div class="form-group has-success has-feedback">
                     <label for="descricao" class="control-label">Descrição</label>
-                    <input type="text" value="@myForm.field("descricao").value()" class="form-control" id="descricao" name="descricao" placeholder="Descrição do produto">
+                    <input type="text" value="@myForm.field("descricao").value()" class="form-control" id="descricao" name="descricao" placeholder="Descrição do produto" required>
                     <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                 </div>
             } else {
                 <div class="form-group">
                     <label for="descricao" class="control-label">Descrição</label>
-                    <input type="text" value="@myForm.field("descricao").value()" class="form-control" id="descricao" name="descricao" placeholder="Descrição do produto">
+                    <input type="text" value="@myForm.field("descricao").value()" class="form-control" id="descricao" name="descricao" placeholder="Descrição do produto" required>
                 </div>
             }
         } else {
             <div class="form-group has-error has-feedback">
                 <label for="descricao" class="control-label">Nome</label>
-                <input type="text" value="@myForm.field("descricao").value()" class="form-control" id="descricao" name="descricao" placeholder="Descrição do produto">
+                <input type="text" value="@myForm.field("descricao").value()" class="form-control" id="descricao" name="descricao" placeholder="Descrição do produto" required>
                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
             </div>
         }
@@ -48,19 +48,19 @@
             @if(myForm.hasErrors) {
                 <div class="form-group has-success has-feedback">
                     <label for="qtd_estoque" class="control-label">Quantidade em Estoque</label>
-                    <input type="number" value="@myForm.field("qtd_estoque").value()" min="0" class="form-control" id="qtd_estoque" name="qtd_estoque" placeholder="Quantidade em estoque">
+                    <input type="number" value="@myForm.field("qtd_estoque").value()" min="0" class="form-control" id="qtd_estoque" name="qtd_estoque" placeholder="Quantidade em estoque" required>
                     <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                 </div>
             } else {
                 <div class="form-group">
                     <label for="qtd_estoque" class="control-label">Quantidade em Estoque</label>
-                    <input type="number" value="@myForm.field("qtd_estoque").value()" min="0" class="form-control" id="qtd_estoque" name="qtd_estoque" placeholder="Quantidade em estoque">
+                    <input type="number" value="@myForm.field("qtd_estoque").value()" min="0" class="form-control" id="qtd_estoque" name="qtd_estoque" placeholder="Quantidade em estoque" required>
                 </div>
             }
         } else {
             <div class="form-group has-error has-feedback">
                 <label for="qtd_estoque" class="control-label">Quantidade em Estoque</label>
-                <input type="number" min="0" value="@myForm.field("qtd_estoque").value()" class="form-control" id="qtd_estoque" name="qtd_estoque" placeholder="Quantidade em estoque">
+                <input type="number" min="0" value="@myForm.field("qtd_estoque").value()" class="form-control" id="qtd_estoque" name="qtd_estoque" placeholder="Quantidade em estoque" required>
                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
             </div>
         }
@@ -71,19 +71,19 @@
             @if(myForm.hasErrors) {
                 <div class="form-group has-success has-feedback">
                     <label for="preco" class="control-label">Preço (R&#036)</label>
-                    <input type="number" value="@myForm.field("preco").value()" min="0" step="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do produto">
+                    <input type="number" value="@myForm.field("preco").value()" min="0" step="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do produto" required>
                     <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                 </div>
             } else {
                 <div class="form-group">
                     <label for="preco" class="control-label">Preço (R&#036)</label>
-                    <input type="number" value="@myForm.field("preco").value()" min="0" step="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do produto">
+                    <input type="number" value="@myForm.field("preco").value()" min="0" step="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do produto" required>
                 </div>
             }
         } else {
             <div class="form-group has-error has-feedback">
                 <label for="preco" class="control-label">Preço (R&#036)</label>
-                <input type="number" value="@myForm.field("preco").value()" min="0" step="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do produto">
+                <input type="number" value="@myForm.field("preco").value()" min="0" step="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do produto" required>
                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
             </div>
         }
@@ -92,19 +92,19 @@
             @if(myForm.hasErrors) {
                 <div class="form-group has-success has-feedback">
                     <label for="adicionado_em" class="control-label">Adicionado em</label>
-                    <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em">
+                    <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em" required>
                     <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                 </div>
             } else {
                 <div class="form-group">
                     <label for="adicionado_em" class="control-label">Adicionado em</label>
-                    <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em">
+                    <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em" required>
                 </div>
             }
         } else {
             <div class="form-group has-error has-feedback">
                 <label for="adicionado_em" class="control-label">Adicionado em</label>
-                <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em">
+                <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em" required>
                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
             </div>
         }
