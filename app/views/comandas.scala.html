@@ -7,7 +7,6 @@
   <table class="table table-condensed">
     <tr>
       <td>CPF do cliente</td>
-      <td>Qtd. Produtos</td>
       <td>Data/hora de abertura</td>
       <td>Preço total</td>
       <td>Produtos</td>
@@ -17,7 +16,6 @@
     @for(comanda <- comandas) {
       <tr class="active">
         <td>@comanda.getCpf_cliente()</td>
-        <td>@comanda.getQtd_produtos()</td>
         <td>@comanda.getData_hora_abertura()</td>
         <td>@comanda.getPreco_total()</td>
         <!-- Insert list of Products and Employees -->

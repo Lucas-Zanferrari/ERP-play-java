@@ -1,0 +1,70 @@
+@(myForm: play.data.Form[Comanda], estoque: java.util.List[Produto])
+<fieldset name="info_comanda">
+  <legend>Comanda</legend>
+  <div class="col1">
+    @if(myForm.error("produtos")==null){
+      @if(myForm.hasErrors){
+
+      } else {
+          <div class="form-group col1">
+              <label for="produtos">Produto</label>
+              <select class="form-control" id="produtos">
+              @for(produto <- estoque) {
+                  <option value="@produto.getNome">@produto.getNome</option>
+              }
+              </select>
+          </div>
+          <div class="form-group col2">
+              <label for="qtd">Quantidade</label>
+              <input type="number" value="0" id="qtd" name="qtd" min="0" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-sm btn-secondary center-block">Adicionar produto</button>
+      }
+    } else {
+
+    }
+  </div>
+
+
+  <div class="col2">
+      @if(myForm.error("cpf_cliente")==null) {
+          @if(myForm.hasErrors){
+              <div class="form-group has-success has-feedback" id="div_cpf_cliente">
+                  <label for="cpf_cliente" class="control-label">CPF do cliente</label>
+                  <input type="number" min="0" value="@myForm.field("cpf_cliente").value()" class="form-control" id="cpf_cliente" name="cpf_cliente" placeholder="CPF do cliente (apenas os números)">
+                  <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+              </div>
+          } else {
+              <div class="form-group" id="div_cpf_cliente">
+                  <label for="cpf_cliente" class="control-label">CPF do cliente</label>
+                  <input type="number" min="0" value="@myForm.field("cpf_cliente").value()" class="form-control" id="cpf_cliente" name="cpf_cliente" placeholder="CPF do cliente (apenas os números)">
+              </div>
+          }
+      } else {
+          <div class="form-group has-error has-feedback" id="div_cpf_cliente">
+              <label for="cpf_cliente" class="control-label">CPF do cliente</label>
+              <input type="number" min="0" value="@myForm.field("cpf_cliente").value()" class="form-control" id="cpf_cliente" name="cpf_cliente" placeholder="CPF do cliente (apenas os números)">
+              <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          </div>
+      }
+
+      @if(myForm.field("data_hora_abertura").value() != null) {
+          <div class="form-group" id="div_data_hora_abertura">
+              <label for="data_hora_abertura" class="control-label">Data/hora de abertura</label>
+              <input type="datetime-local" disabled value="@myForm.field("adicionado_em").value()" class="form-control" id="data_hora_abertura" name="data_hora_abertura" placeholder="Data/hora de abertura">
+          </div>
+      } else {
+          <div class="form-group" id="div_data_hora_abertura">
+              <label for="data_hora_abertura" class="control-label">Data/hora de abertura</label>
+              <input type="datetime-local" disabled value="@(new Date().format("yyyy-MM-dd"))T@(new Date().format("hh:mm"))" class="form-control" id="data_hora_abertura" name="data_hora_abertura" placeholder="Data/hora de abertura">
+          </div>
+      }
+
+      <div class="form-group" id="div_funcionarios">
+          <label for="funcionarios" class="control-label">Funcionário(s) responsável(eis)</label>
+          <input disabled type="text" value="@session().get("nome") @if(myForm.field("funcionarios_responsaveis").value() != null) {@myForm.field("funcionarios_responsaveis").toString}" id="funcionarios" name="funcionarios" class="form-control">
+      </div>
+
+  </div>
+
+</fieldset>

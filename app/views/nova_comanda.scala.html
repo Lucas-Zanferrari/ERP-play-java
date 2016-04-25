@@ -1,20 +1,26 @@
-@(myForm: play.data.Form[Comanda], message:String)
+@(myForm: play.data.Form[Comanda],message:String)
 
-  @if(message!="") {
-    <div class="alert alert-success" role="alert">
-    @message
-    </div>
+@if(message!="") {
+  <div class="alert alert-success" role="alert">
+  @message
+  </div>
+}
+@if(myForm.hasGlobalErrors) {
+  <ul>
+  @for(error <- myForm.globalErrors) {
+    <li>@error.message</li>
   }
-  @if(myForm.hasGlobalErrors()) {
-    <ul>
-    @for(error <- myForm.globalErrors) {
-      <li>@error.message</li>
-    }
-    </ul>
-  }
-<form class="form-all-required" method="post" action="@routes.ComandaController.create()">
+  </ul>
+}
 
-
-
-
-</form>
+@if(myForm.value.getOrElse(null)==null) {
+  <form class="form-all-required" method="post" action="@routes.ComandaController.create(null)">
+    @comanda(myForm, Produto.list())
+    <button type="submit" class="btn btn-lg btn-default center-block">Cadastrar</button>
+  </form>
+}else{
+  <form class="form-all-required" method="post" action="@routes.ComandaController.create(myForm.get().getId.toString)">
+    @comanda(myForm, Produto.list())
+    <button type="submit" class="btn btn-lg btn-default center-block">Editar</button>
+  </form>
+}

@@ -6,10 +6,9 @@
 create table comanda (
   id                        integer not null,
   cpf_cliente               integer,
-  data_hora_encerramento    timestamp,
-  qtd_produtos              integer,
-  preco_total               float,
   data_hora_abertura        timestamp,
+  preco_total               float,
+  data_hora_encerramento    timestamp,
   constraint pk_comanda primary key (id))
 ;
 

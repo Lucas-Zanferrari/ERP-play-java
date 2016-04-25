@@ -5,7 +5,6 @@ import play.data.validation.Constraints;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,25 +12,29 @@ import java.util.List;
  */
 @Entity
 public class Comanda extends Model {
-    private int cpf_cliente;
-    private Date data_hora_encerramento;
 
     @Id
     private int id;
     @Constraints.Required
-    private ArrayList<Produto> produtos;
+    private List<Produto> produtos;
     @Constraints.Required
-    private ArrayList<Funcionario> funcionarios;
+    private List<String> funcionarios_responsaveis;
     @Constraints.Required
-    private int qtd_produtos;
-    @Constraints.Required
-    private float preco_total;
+    private int cpf_cliente;
     @Constraints.Required
     private Date data_hora_abertura;
+    @Constraints.Required
+    private float preco_total;
+
+    private Date data_hora_encerramento;
 
     public static Finder<String, Comanda> find = new Finder<String, Comanda>(
             String.class, Comanda.class
     );
+
+    public static Comanda byId(String id) {
+        return find.byId(id);
+    }
 
     public static List<Comanda> list(){
         return find.all();
@@ -51,14 +54,6 @@ public class Comanda extends Model {
 
     public int getCpf_cliente(){
         return cpf_cliente;
-    }
-
-    public void setQtd_produtos(int qtd_produtos){
-        this.qtd_produtos = qtd_produtos;
-    }
-
-    public int getQtd_produtos(){
-        return qtd_produtos;
     }
 
     public void setPreco_total(float preco_total){
@@ -83,5 +78,21 @@ public class Comanda extends Model {
 
     public Date getData_hora_encerramento(){
         return data_hora_encerramento;
+    }
+
+    public void setProdutos(List<Produto> produtos ){
+        this.produtos = produtos;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setFuncionarios_responsaveis(List<String> funcionarios_responsaveis){
+        this.funcionarios_responsaveis = funcionarios_responsaveis;
+    }
+
+    public List<String> getFuncionarios_responsaveis(){
+        return funcionarios_responsaveis;
     }
 }

@@ -92,22 +92,23 @@
             @if(myForm.hasErrors) {
                 <div class="form-group has-success has-feedback">
                     <label for="adicionado_em" class="control-label">Adicionado em</label>
-                    <input type="date" value="@(new Date().format("yyyy-MM-dd"))" class="form-control" id="adicionado_em" name="adicionado_em">
+                    <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em">
                     <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                 </div>
             } else {
                 <div class="form-group">
                     <label for="adicionado_em" class="control-label">Adicionado em</label>
-                    <input type="date" value="@(new Date().format("yyyy-MM-dd"))" class="form-control" id="adicionado_em" name="adicionado_em">
+                    <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em">
                 </div>
             }
         } else {
             <div class="form-group has-error has-feedback">
                 <label for="adicionado_em" class="control-label">Adicionado em</label>
-                <input type="date" value="@(new Date().format("yyyy-MM-dd"))" class="form-control" id="adicionado_em" name="adicionado_em">
+                <input type="date" value="@if(myForm.field("adicionado_em").value() != null) {@myForm.field("adicionado_em").value()} else {@(new Date().format("yyyy-MM-dd"))}" class="form-control" id="adicionado_em" name="adicionado_em">
                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
             </div>
         }
+
     </div>
 
 </fieldset>

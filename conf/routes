@@ -3,32 +3,35 @@
 # ~~~~
 
 # Home page
-GET     /                                controllers.Application.index
+GET     /                                           controllers.Application.index
 
-GET     /login                           controllers.Application.login()
-GET     /logout                          controllers.Application.logout()
-POST    /login                           controllers.Application.authenticate()
+GET    /login                                       controllers.Application.login()
+GET    /logout                                      controllers.Application.logout()
+POST   /login                                       controllers.Application.authenticate()
 
-GET    /novo_funcionario/             controllers.FuncionarioController.index(id:String = null)
-GET    /novo_funcionario/:funcionarioID                controllers.FuncionarioController.index(funcionarioID)
-POST   /novo_funcionario                controllers.FuncionarioController.save(id:String = null)
-POST    /novo_funcionario/:funcionarioID                controllers.FuncionarioController.save(funcionarioID)
-GET    /novo_funcionario/:funcionarioID/delete                controllers.FuncionarioController.delete(funcionarioID)
-GET    /funcionarios                    controllers.FuncionarioController.list()
+GET    /novo_funcionario/                           controllers.FuncionarioController.index(id:String = null)
+GET    /novo_funcionario/:funcionarioID             controllers.FuncionarioController.index(funcionarioID)
+POST   /novo_funcionario                            controllers.FuncionarioController.save(id:String = null)
+POST   /novo_funcionario/:funcionarioID             controllers.FuncionarioController.save(funcionarioID)
+GET    /novo_funcionario/:funcionarioID/delete      controllers.FuncionarioController.delete(funcionarioID)
+GET    /funcionarios                                controllers.FuncionarioController.list
 
-GET     /novo_produto                    controllers.ProdutoController.index(id:String = null)
-GET     /novo_produto/:produtoID                    controllers.ProdutoController.index(produtoID)
-POST    /novo_produto                    controllers.ProdutoController.create(id:String = null)
-POST    /novo_produto/:produtoID                    controllers.ProdutoController.create(produtoID)
-GET    /novo_produto/:produtoID/delete                    controllers.ProdutoController.delete(produtoID)
+GET    /novo_produto                                controllers.ProdutoController.index(id:String = null)
+GET    /novo_produto/:produtoID                     controllers.ProdutoController.index(produtoID)
+POST   /novo_produto                                controllers.ProdutoController.create(id:String = null)
+POST   /novo_produto/:produtoID                     controllers.ProdutoController.create(produtoID)
+GET    /novo_produto/:produtoID/delete              controllers.ProdutoController.delete(produtoID)
+GET    /produtos                                    controllers.ProdutoController.list
 
-GET     /produtos                        controllers.ProdutoController.list()
+GET    /nova_comanda                                controllers.ComandaController.index(id:String = null)
+GET    /nova_comanda/:comandaID                     controllers.ComandaController.index(comandaID)
+POST   /nova_comanda                                controllers.ComandaController.create(id:String = null)
+POST   /nova_comanda/:comandaID                     controllers.ComandaController.create(comandaID)
+GET    /nova_comanda/:comandaID/delete              controllers.ComandaController.delete(comandaID)
+GET    /comandas                                    controllers.Application.index
 
-GET     /nova_comanda                    controllers.ComandaController.index()
-POST    /nova_comanda                    controllers.ComandaController.create()
-
-GET     /obter_suporte                   controllers.ObterAjudaController.index()
-POST    /obter_suporte                   controllers.ObterAjudaController.sendEmail()
+GET    /obter_suporte                               controllers.ObterAjudaController.index()
+POST   /obter_suporte                               controllers.ObterAjudaController.sendEmail()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                    controllers.Assets.at(path="/public", file)
