@@ -2,6 +2,7 @@ package controllers;
 
 import models.Funcionario;
 import models.Comanda;
+import models.Login;
 import play.mvc.Result;
 import play.mvc.Controller;
 import play.data.Form;

@@ -1,6 +1,4 @@
-package controllers;
-
-import models.Funcionario;
+package models;
 
 public class Login {
 

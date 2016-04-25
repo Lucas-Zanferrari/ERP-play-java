@@ -1,35 +1,36 @@
 package models;
 
 import com.avaje.ebean.Model;
-import play.data.validation.Constraints;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.util.Date;
-import java.util.List;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 
 /**
  * Created by lucaszanferrari on 9/04/2016.
  */
-@Entity
+
 public class ObterAjuda extends Model {
 
-
-    @Constraints.Required
     private String name;
-    @Constraints.Required
     private String email;
-    @Constraints.Required
     private String phone;
-    @Constraints.Required
     private String message;
 
-    public static Finder<String, ObterAjuda> find = new Finder<String, ObterAjuda>(
-            String.class, ObterAjuda.class
-    );
+    public void enviaEmailSimples(String nomeRementente, String emailRemetente,
+                                  String emailDestinatario,
+                                  String assunto, String mensagem) throws EmailException {
 
-    public static List<ObterAjuda> list(){
-        return find.all();
+        SimpleEmail email = new SimpleEmail();
+        email.setHostName("smtp.mail.com"); // o servidor SMTP para envio do e-mail
+        email.addTo(emailDestinatario); //destinatário
+        email.setFrom(emailRemetente, nomeRementente); // remetente
+        email.setSubject(assunto); // assunto do e-mail
+        email.setMsg(mensagem); //conteudo do e-mail
+        email.setAuthentication("sup.padaria@mail.com", "syspadaria2016"); //criar email e senha para envio (mesmo do destinatario)
+        email.setCharset("UTF-8");
+        email.setSmtpPort(587);
+        email.setTLS(true);
+        email.setSSL(true);
+        email.send();
     }
 
     public String getName() {

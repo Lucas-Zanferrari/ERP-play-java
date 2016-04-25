@@ -34,13 +34,6 @@ create table funcionario (
   constraint pk_funcionario primary key (id))
 ;
 
-create table obter_ajuda (
-  name                      varchar(255),
-  email                     varchar(255),
-  phone                     varchar(255),
-  message                   varchar(255))
-;
-
 create table produto (
   id                        integer not null,
   editado_em                timestamp,
@@ -68,8 +61,6 @@ SET REFERENTIAL_INTEGRITY FALSE;
 drop table if exists comanda;
 
 drop table if exists funcionario;
-
-drop table if exists obter_ajuda;
 
 drop table if exists produto;
 

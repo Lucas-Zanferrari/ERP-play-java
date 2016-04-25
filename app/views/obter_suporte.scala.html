@@ -19,7 +19,7 @@
         <div class="form_suporte">
             <div class="form-group has-feedback@if(myForm.error("name")!=null){ has-error}else{@if(myForm.hasErrors){ has-success}}">
                 <label for="nome_email" class="control-label">Nome</label>
-                <input id="nome_email" name="name" type="text" placeholder="Nome completo" class="form-control" value="@myForm.field("name").value()" autofocus required>
+                <input id="nome_email" name="name" type="text" placeholder="Nome completo" class="form-control" @if(session().get("nome")!=null){value="@session().get("nome")" disabled}else{@myForm.field("name").value()"} autofocus required>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
 

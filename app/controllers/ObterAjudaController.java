@@ -1,7 +1,6 @@
 package controllers;
 
 import models.ObterAjuda;
-import notifier.SendEmail;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -19,8 +18,7 @@ public class ObterAjudaController extends Controller {
         return ok(index.render("", "", obter_suporte.render(ajudaForm,"")));
     }
 
-    public static Result sendEmail()
-    {
+    public static Result sendEmail() {
         Form<ObterAjuda> ajudaForm = Form.form(ObterAjuda.class);
         ajudaForm = ajudaForm.bindFromRequest();
         if (ajudaForm.hasErrors()) {
@@ -29,8 +27,7 @@ public class ObterAjudaController extends Controller {
             ObterAjuda ajudaObj = ajudaForm.get();
             String contato = "Contato:\n" + ajudaForm.field("phone").value() + "\n" + ajudaForm.field("email").value();
             String message = contato + "\n\n" + "Mensagem:\n" + ajudaForm.field("message").value();
-            ajudaObj.save();
-            SendEmail email = new SendEmail();
+            ObterAjuda email = new ObterAjuda();
             try {
                 email.enviaEmailSimples(ajudaForm.field("name").value(),"sup.padaria@mail.com","sup.padaria@mail.com","Suporte Padaria",message);
             } catch (EmailException e) {
