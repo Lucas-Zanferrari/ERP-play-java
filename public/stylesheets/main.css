@@ -24,6 +24,9 @@ fieldset {
     min-height: 525px;
     display: flex;
 }
+.form_suporte{
+    margin: 0 10% 0 10%;
+}
 .col-sm-8 {
     padding: 20px;
     background-color: white;
@@ -33,12 +36,6 @@ fieldset {
 }
 a:hover{
     text-decoration: none;
-}
-a .well {
-    transition: background-color 0.4s;
-}
-a .well:hover{
-    background-color: lightgray;
 }
 /* Set gray background color and 100% height */
 .sidenav {
@@ -60,6 +57,9 @@ footer {
     .row.content {
         height: auto;
         display: block;
+    }
+    .form_suporte{
+        margin: 0;
     }
     .col1, .col2 {
         float: none;
@@ -91,7 +91,7 @@ body {
 .form-signin .form-control:focus {
     z-index: 2;
 }
-.form-signin input[type="email"] {
+.form-signin input[type="text"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;

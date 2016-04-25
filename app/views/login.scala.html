@@ -8,11 +8,11 @@
             <hr>
             <form class="form-signin" method="post" action="@routes.Application.authenticate()">
                 <h3 class="form-signin-heading">Formulário de login</h3>
-                <label for="inputUsername" class="sr-only">Endereço de email</label>
+                <label for="inputUsername" class="sr-only">Usuário</label>
                 <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Usuário" required autofocus>
                 <label for="inputPassword" class="sr-only">Senha</label>
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                <button class="btn btn-lg btn-block btn-default center-block" type="submit">Enviar</button>
                 @if(message!=null) {
                     <br />
                     <div class="alert alert-danger text-center" role="alert">
