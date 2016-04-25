@@ -1,7 +1,9 @@
 package controllers;
 
 import models.ObterAjuda;
+import notifier.SendEmail;
 import models.Produto;
+import org.apache.commons.mail.EmailException;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -32,7 +34,16 @@ public class ObterAjudaController extends Controller {
             return badRequest(index.render("", "", obter_suporte.render(ajudaForm, "")));
         } else {
             ObterAjuda ajudaObj = ajudaForm.get();
+            String contato = "Contato\n" + ajudaForm.field("phone").value() + "\n" + ajudaForm.field("email").value();
+            String message = contato + "\n\n" + "Mensagem:\n" + ajudaForm.field("message").value();
             ajudaObj.save();
+            SendEmail email = new SendEmail();
+            try {
+                email.enviaEmailSimples(ajudaForm.field("name").value(),""," ","Teste",message);
+            } catch (EmailException e) {
+                e.printStackTrace();
+            }
+
             return ok(index.render("", "", obter_suporte.render(ajudaForm, "Email enviado com sucesso.")));
         }
     }

@@ -30,7 +30,7 @@
                     <ul class="nav navbar-nav">
                         @if(session().isEmpty) {
                             <li><a href="@routes.Application.index()">Sistema de Automação Comercial</a></li>
-                            <li><a href="#">Obter suporte</a></li>
+                            <li><a href="@routes.ObterAjudaController.index()">Obter suporte</a></li>
                         } else {
                             @if(session.get("nivelAcesso")=="Gerente") {
                                 <li><a href="@routes.FuncionarioController.index("")">Novo funcionário</a></li>
@@ -46,8 +46,8 @@
                                 <li><a href="@routes.ProdutoController.index(null)">Novo produto</a></li>
                                 <li><a href="@routes.ComandaController.index(null)">Nova comanda</a></li>
                                 <li><a href="@routes.ProdutoController.list()">Lista de produtos</a></li>
-                                <li><a href="@routes.Application.index()">Lista de comandas</a></li>
-                                <li><a href="#">Obter suporte</a></li>
+                                <li><a href="@routes.ComandaController.list()">Lista de comandas</a></li>
+                                <li><a href="@routes.ObterAjudaController.index()">Obter suporte</a></li>
                             }
                         }
                     </ul>

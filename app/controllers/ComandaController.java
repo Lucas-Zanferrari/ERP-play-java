@@ -44,4 +44,8 @@ public class ComandaController extends Controller {
         comanda.delete();
         return ok(index.render("", "comanda", comandas.render(comanda.list(), "Comanda "+id+" removida com sucesso")));
     }
+
+    public static Result list(){
+        return ok(index.render("", "Comanda", comandas.render(Comanda.list(), "")));
+    }
 }
