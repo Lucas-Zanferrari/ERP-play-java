@@ -4,9 +4,12 @@ version := "1.0"
 
 lazy val `gerenciador-padaria-play-java` = (project in file(".")).enablePlugins(PlayJava,PlayEbean)
 
+
+
 scalaVersion := "2.11.7"
 
-libraryDependencies ++= Seq( javaJdbc ,  cache , javaWs )
+libraryDependencies ++= Seq( javaJdbc ,  cache , javaWs)
+libraryDependencies += "org.apache.commons" % "commons-email" % "1.4"
 
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
 

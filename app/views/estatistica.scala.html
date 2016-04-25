@@ -1,0 +1,35 @@
+@(funcionarios: java.util.List[Funcionario], message: String)
+    @if(message!=null) {
+        <div class="alert alert-success" role="alert">
+            @message
+        </div>
+    }
+<table class="table table-condensed">
+    <tr>
+        <td>Produtos mais vendidos</td>
+        <td>Quantidade</td>
+    </tr>
+</table>
+
+<table class="table table-condensed">
+    <tr>
+        <td>Funcionário</td>
+        <td>Nº de Vendas</td>
+    </tr>
+</table>
+
+<table class="table table-condensed">
+    <tr>
+        <td>Total de Vendas no Periodo</td>
+    </tr>
+</table>
+
+<table class="table table-condensed">
+    <tr>
+        <td>Dia</td>
+        <td>Nº de Vendas</td>
+    </tr>
+</table>
+
+
+

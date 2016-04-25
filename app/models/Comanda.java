@@ -32,6 +32,7 @@ public class Comanda extends Model {
             String.class, Comanda.class
     );
 
+
     public static Comanda byId(String id) {
         return find.byId(id);
     }

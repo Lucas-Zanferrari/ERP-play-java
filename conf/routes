@@ -28,7 +28,7 @@ GET    /nova_comanda/:comandaID                     controllers.ComandaControlle
 POST   /nova_comanda                                controllers.ComandaController.create(id:String = null)
 POST   /nova_comanda/:comandaID                     controllers.ComandaController.create(comandaID)
 GET    /nova_comanda/:comandaID/delete              controllers.ComandaController.delete(comandaID)
-GET    /comandas                                    controllers.Application.index
+GET    /comandas                                    controllers.ComandaController.list()
 
 GET    /obter_suporte                               controllers.ObterAjudaController.index()
 POST   /obter_suporte                               controllers.ObterAjudaController.sendEmail()
