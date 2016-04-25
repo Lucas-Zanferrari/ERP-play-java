@@ -39,7 +39,7 @@ public class ObterAjudaController extends Controller {
             ajudaObj.save();
             SendEmail email = new SendEmail();
             try {
-                email.enviaEmailSimples(ajudaForm.field("name").value(),"vitor_dmrb@hotmail.com","vitor.domribeiro@gmail.com","Teste",message);
+                email.enviaEmailSimples(ajudaForm.field("name").value(),"","","Teste",message);
             } catch (EmailException e) {
                 e.printStackTrace();
             }
