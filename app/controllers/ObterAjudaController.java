@@ -34,12 +34,12 @@ public class ObterAjudaController extends Controller {
             return badRequest(index.render("", "", obter_suporte.render(ajudaForm, "")));
         } else {
             ObterAjuda ajudaObj = ajudaForm.get();
-            String contato = "Contato\n" + ajudaForm.field("phone").value() + "\n" + ajudaForm.field("email").value();
+            String contato = "Contato:\n" + ajudaForm.field("phone").value() + "\n" + ajudaForm.field("email").value();
             String message = contato + "\n\n" + "Mensagem:\n" + ajudaForm.field("message").value();
             ajudaObj.save();
             SendEmail email = new SendEmail();
             try {
-                email.enviaEmailSimples(ajudaForm.field("name").value(),""," ","Teste",message);
+                email.enviaEmailSimples(ajudaForm.field("name").value(),"sup.padaria@mail.com","sup.padaria@mail.com","Suporte Padaria",message);
             } catch (EmailException e) {
                 e.printStackTrace();
             }
