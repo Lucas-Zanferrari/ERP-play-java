@@ -2,27 +2,33 @@
 <fieldset name="info_comanda">
   <legend>Comanda</legend>
   <div class="col1">
-    @if(myForm.error("produtos")==null){
-      @if(myForm.hasErrors){
-
-      } else {
-          <div class="form-group col1">
-              <label for="produtos">Produto</label>
-              <select class="form-control" id="produtos">
-              @for(produto <- estoque) {
-                  <option value="@produto.getNome">@produto.getNome</option>
-              }
-              </select>
-          </div>
-          <div class="form-group col2">
-              <label for="qtd">Quantidade</label>
-              <input type="number" value="0" id="qtd" name="qtd" min="0" class="form-control">
-          </div>
-          <button type="submit" class="btn btn-sm btn-secondary center-block">Adicionar produto</button>
+      @for((produtoComanda,i) <- myForm.value().get().getProdutos.zipWithIndex){
+        <div class="form-group col1">
+            <label for="produtos">Produto</label>
+            <select class="form-control" id="produtos" name="produtos[@i].id" value="@produtoComanda.getId">
+                @for(produto <- estoque) {
+                    <option @if(produto.getId == produtoComanda.getId){selected} value="@produto.getId">@produto.getNome</option>
+                }
+            </select>
+        </div>
+        <div class="form-group col2">
+           <label for="qtd">Quantidade</label>
+           <input type="number" id="qtd" name="produtos[@i].quantidade" value="@produtoComanda.getQuantidade" min="0" class="form-control">
+        </div>
       }
-    } else {
-
-    }
+  <div class="form-group col1">
+      <label for="produtos">Produto</label>
+      <select class="form-control" id="produtos" name="produtos[@myForm.value.get.getProdutos.size].id" value="">
+      @for(produto <- estoque) {
+          <option value="@produto.getId">@produto.getNome</option>
+      }
+      </select>
+  </div>
+  <div class="form-group col2">
+      <label for="qtd">Quantidade</label>
+      <input type="number" value="0" id="qtd" name="produtos[@myForm.value.get.getProdutos.size].quantidade" value="" min="0" class="form-control">
+  </div>
+      <button type="submit" class="btn btn-sm btn-secondary center-block">Adicionar produto</button>
   </div>
 
 
@@ -48,21 +54,9 @@
           </div>
       }
 
-      @if(myForm.field("data_hora_abertura").value() != null) {
-          <div class="form-group" id="div_data_hora_abertura">
-              <label for="data_hora_abertura" class="control-label">Data/hora de abertura</label>
-              <input type="datetime-local" disabled value="@myForm.field("adicionado_em").value()" class="form-control" id="data_hora_abertura" name="adicionado_em" placeholder="Data/hora de abertura">
-          </div>
-      } else {
-          <div class="form-group" id="div_data_hora_abertura">
-              <label for="data_hora_abertura" class="control-label">Data/hora de abertura</label>
-              <input type="datetime-local" disabled value="@(new Date().format("yyyy-MM-dd"))T@(new Date().format("hh:mm"))" class="form-control" id="data_hora_abertura" name="adicionado_em" placeholder="Data/hora de abertura">
-          </div>
-      }
-
-      <div class="form-group" id="div_funcionarios">
-          <label for="funcionarios" class="control-label">Funcionário(s) responsável(eis)</label>
-          <input disabled type="text" value="@session().get("nome") @if(myForm.field("funcionarios_responsaveis").value() != null) {@myForm.field("funcionarios_responsaveis").toString}" id="funcionarios" name="funcionarios_responsaveis" class="form-control">
+      <div class="form-group" id="div_data_hora_abertura">
+          <label for="data_hora_abertura" class="control-label">Data/hora de abertura</label>
+          <input type="datetime-local" disabled value="@(new Date().format("yyyy-MM-dd'T'hh:mm"))" class="form-control" id="data_hora_abertura" name="data_hora_abertura" placeholder="Data/hora de abertura">
       </div>
 
   </div>

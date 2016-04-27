@@ -5,10 +5,9 @@
 
 create table comanda (
   id                        integer not null,
-  cpf_cliente               integer,
+  cpf_cliente               varchar(255),
   data_hora_abertura        timestamp,
-  preco_total               float,
-  data_hora_encerramento    timestamp,
+  preco_total               double,
   constraint pk_comanda primary key (id))
 ;
 
@@ -45,12 +44,24 @@ create table produto (
   constraint pk_produto primary key (id))
 ;
 
+create table produto_adicionado (
+  comanda_id                integer,
+  quantidade                integer,
+  id                        integer)
+;
+
+create table venda (
+  data_hora_encerramento    timestamp)
+;
+
 create sequence comanda_seq;
 
 create sequence funcionario_seq;
 
 create sequence produto_seq;
 
+alter table produto_adicionado add constraint fk_produto_adicionado_comanda_1 foreign key (comanda_id) references comanda (id) on delete restrict on update restrict;
+create index ix_produto_adicionado_comanda_1 on produto_adicionado (comanda_id);
 
 
 
@@ -63,6 +74,10 @@ drop table if exists comanda;
 drop table if exists funcionario;
 
 drop table if exists produto;
+
+drop table if exists produto_adicionado;
+
+drop table if exists venda;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 

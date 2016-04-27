@@ -1,10 +1,9 @@
 package models;
 
 import javax.persistence.*;
-import javax.validation.Constraint;
 
 import play.data.validation.Constraints;
-import play.db.ebean.Model;
+import com.avaje.ebean.Model;
 import java.util.Date;
 import java.util.List;
 
