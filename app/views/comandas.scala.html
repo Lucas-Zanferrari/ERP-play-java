@@ -1,4 +1,10 @@
 @(comandas:java.util.List[Comanda], message: String)
+  @if(message!=null) {
+      <div class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <strong>@message</strong>
+      </div>
+  }
 @if(comandas.isEmpty){
   <div class="alert alert-danger" role="alert">
     Não há comandas cadastradas
@@ -6,20 +12,51 @@
 } else {
   <table class="table table-condensed">
     <tr>
+      <td>ID</td>
       <td>CPF do cliente</td>
       <td>Data/hora de abertura</td>
       <td>Preço total</td>
-      <td>Produtos</td>
-      <td>Funcionários responsáveis</td>
+      <td>Finalizar</td>
+      <td>Excluir</td>
+      <td></td>
     </tr>
 
     @for(comanda <- comandas) {
       <tr class="active">
+        <td>@comanda.getId</td>
         <td>@comanda.getCpf_cliente()</td>
         <td>@comanda.getData_hora_abertura()</td>
-        <td>@comanda.getPreco_total()</td>
-        <!-- Insert list of Products and Employees -->
+        <td>@comanda.getPreco_total</td>
+        <td>
+          <a type="button" class="btn btn-default" aria-label="Left Align" data-toggle="modal" data-target="#@(comanda.getId)_myModal">
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          </a>
+        </td>
+        <td>
+          <a type="button" class="btn btn-default" aria-label="Left Align" href="@routes.ComandaController.delete(comanda.getId.toString)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </a>
+        </td>
       </tr>
+
+        <!-- Modal -->
+      <div class="modal fade" id="@(comanda.getId)_myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Finalizar comanda @comanda.getId</h4>
+            </div>
+            <div class="modal-body">
+              <h4>Total: R$ @comanda.getPreco_total</h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <a type="button" class="btn btn-primary" href="@routes.ComandaController.finalizar(comanda.getId.toString)">Finalizar</a>
+            </div>
+          </div>
+        </div>
+      </div>
     }
   </table>
 }

@@ -13,14 +13,14 @@
   </ul>
 }
 
-@if(myForm.value.getOrElse(null)==null) {
-  <form class="form-all-required" method="post" action="@routes.ComandaController.create(null)">
-    @comanda(myForm, Produto.list())
-    <button type="submit" class="btn btn-lg btn-default center-block">Cadastrar</button>
-  </form>
-}else{
+@if(myForm.value.getOrElse(null)!=null && myForm.value.get().getId!=null) {
   <form class="form-all-required" method="post" action="@routes.ComandaController.create(myForm.get().getId.toString)">
     @comanda(myForm, Produto.list())
     <button type="submit" class="btn btn-lg btn-default center-block">Editar</button>
+  </form>
+}else{
+  <form class="form-all-required" method="post" action="@routes.ComandaController.create(null)">
+    @comanda(myForm, Produto.list())
+    <button type="submit" class="btn btn-lg btn-default center-block">Cadastrar</button>
   </form>
 }
